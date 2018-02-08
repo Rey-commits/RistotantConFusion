@@ -52,12 +52,9 @@ At the prompt type:
 
 Bootstrap is designed to be mobile first, meaning that the classes are designed such that we can begin by targeting mobile device screens first and then work upwards to larger screen sizes. The starting point for this is first through media queries. We have already added the support for media queries in the last lesson, where we added this line to the head:
 
-```
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-```
+`<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">`
 
-The viewport meta tag ensures that the screen width is set to the device width and the content is rendered with this width in mind. This brings us to the second issue, designing the websites to be responsive to the size of the viewport. This is where the Bootstrap grid system comes to our aid. Bootstrap makes available four sizes, xs for extra small, sm for small, md for medium and lg for large screen sizes. We have already seen the basics of responsive design. In this exercise, we will employ the Bootstrap grid classes to design the websites. We would like our website to have the content stacked on extra small devices, but become horizontal within each row for smaller devices and beyond. Towards this goal, we will make use of the classes .col-*, .col-sm-*, col-md-*, and .col-lg-* for defining the layouts for the various device sizes. We can specify how many columns each piece of content will occupy within a row, all adding up to 12 or a multiple thereof.
-
+The viewport meta tag ensures that the screen width is set to the device width and the content is rendered with this width in mind. This brings us to the second issue, designing the websites to be responsive to the size of the viewport. This is where the Bootstrap grid system comes to our aid. Bootstrap makes available four sizes, xs for extra small, sm for small, md for medium and lg for large screen sizes. We have already seen the basics of responsive design. In this exercise, we will employ the Bootstrap grid classes to design the websites. We would like our website to have the content stacked on extra small devices, but become horizontal within each row for smaller devices and beyond. Towards this goal, we will make use of the classes `.col-*`, `.col-sm-*`, `col-md-*`, and `.col-lg-*` for defining the layouts for the various device sizes. We can specify how many columns each piece of content will occupy within a row, all adding up to 12 or a multiple thereof.
 
 ###  **Using a Container class**
 
@@ -124,16 +121,117 @@ Now you can see how the web page has been turned into a mobile-first responsive 
 <div class="col-sm pull-sm-4 col-md pull-md-3"> ... </div>
 
 ```
-* For the div containing the <ul> with the site links, update the class as follows:
+
+* For the div containing the `<ul>` with the site links, update the class as follows:
 
 `<div class="col-5 offset-1 col-sm-2">`
 
+###  **Using Flex Order**
+
+* Using Flex ordering, we can achieve the same effect that we achieved with the push and pull classes above. To do this, you can update the two div classes above as follows:
+
+```
+div class="col-sm-4 col-md-3 flex-last"> ... </div>
+
+<div class="col-sm col-md flex-first"> ... </div>
+```
+
+###  **List styles**
+
+* You can use several list styles to display lists in different formats. In this exercise, we will use the unordered list style *list-unstyled* to display the links at the bottom of the page without the bullets. To do this, go to the links in the footer and update the ul as follows
+
+`<ul class="list-unstyled"> ... </ul>`
+
+###  **Using Custom CSS classes**
+
+* Create a folder named **css**. Then create a file named styles.css in the **css** folder. Open this file to edit the contents. Add the following CSS code to the file:
+
+```
+.row-header{
+    margin:0px auto;
+    padding:0px;
+}
+
+.row-content {
+    margin:0px auto;
+    padding: 50px 0px 50px 0px;
+    border-bottom: 1px ridge;
+    min-height:400px;
+}
+
+.footer{
+    background-color: #D1C4E9;
+    margin:0px auto;
+    padding: 20px 0px 20px 0px;
+}
+```
+
+* Include the *styles.css* file into the head of the index.html file as follows:
+
+`<link href="css/styles.css" rel="stylesheet">`
+
+* Then add these classes to the corresponding rows in the *index.html* file as follows. See the difference in the index.html file in the browser. The first one is for the row in the `<header>`, the next three for the rows in the content, and the last one directly to the `<footer>` tag.
+
+```
+<div class="row row-header"> ... </div>
+
+<div class="row row-content"> ... </div>
+
+<div class="row row-content"> ... </div>
+
+<div class="row row-content"> ... </div>
+
+<footer class="footer"> ... </footer>
+```
+
+* Our next set of customization is to the jumbotron and the address. Add the following to *styles.css* file:
+
+```
+jumbotron {
+    padding:70px 30px 70px 30px;
+    margin:0px auto;
+    background: #9575CD ;
+    color:floralwhite;
+}
+
+address{
+    font-size:80%;
+    margin:0px;
+    color:#0f0f0f;
+}
+```
+
+###  **Vertically Centering the Content**
+
+* In the content section, update all the rows as follows:
+
+` <div class="row row-content align-items-center">`
+
+* In the footer, update the third column div that contains the social media links as follows:
+
+`<div class="col col-sm-4 align-self-center">`
+
+###  **Horizontally Centering the Content**
+
+* Update the copyright paragraph as follows:
+
+```
+<div class="row justify-content-center">             
+<div class="col-auto">
+```
+
+###  **Applying Inline CSS**
+
+* Update the inner div containing the social media links as follows:
+
+`<div style="text-align:center">`
+
+#  **Assignment: Assignment 1: Bootstrap and Responsive Design**
 
 
-###  *Sample Case 1:*
 
-The binary representation of **5** is **101**, so the maximum number of consecutive 1's is **1**.
 
-###  *Sample Case 2:*
-
-The binary representation of **13** is **1101**, so the maximum number of consecutive 1's is **2**.
+###  **Applying Inline CSS**
+###  **Applying Inline CSS**
+###  **Applying Inline CSS**
+###  **Applying Inline CSS**
