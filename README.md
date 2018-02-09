@@ -28,7 +28,7 @@ At the prompt type:
 * Open the *index.html* file in your favourite text editor. If you are using Visual Studio Code, Brackets, Sublime Text or similar editors, you can open the project folder in the editor and then view index.html.
 * Insert the following code in the `<head>` of *index.html* file before the title.
 
-```
+```html
 <!-- Required meta tags always come first -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -41,7 +41,7 @@ At the prompt type:
 * This will include Bootstrap CSS into your web page. Note the subtle change in the fonts of the content of the web page. This is the Bootstrap typography effect coming into play. The default Bootstrap typography sets the font to Helvetica Neue and selects the appropriate font size based on the choice of the heading style and paragraph style for the content.
 * At the bottom of the page, just before the end of the body tag, add the following code to include the JQuery library, tether library and Bootstrap's Javascript plugins. Bootstrap by default uses the JQuery Javascript library for its Javascript plugins. Hence the need to include JQuery library in the web page.
 
-```
+```html
 <!-- jQuery first, then Tether, then Bootstrap JS. -->
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
 <script src="node_modules/tether/dist/js/tether.min.js"></script>
@@ -84,40 +84,35 @@ The viewport meta tag ensures that the screen width is set to the device width a
 
 * In the header row, we will display the restaurant name and the description to occupy 8 columns, while we will leave four columns for displaying the restaurant logo in the future. Let us go into the jumbotron and define the classes for the inner divs as follows:
 
-```
+```html
 <div class="col-12 col-sm-8"> ... </div>
 <div class="col col-sm"> ... </div>
 ```
 
 * For the remaining three div rows that contain content, let us define the classes for the inner divs as follows:
 
-```
+```html
 <div class="col-sm-4 col-md-3"> ... </div>
 <div class="col-sm col-md"> ... </div>
 ```
 
 * For the footer, let us define the classes for the inner divs as follows:
 
-```
+```html
 <div class="col-5 col-sm-2"> ... </div>
-
 <div class="col-6 col-sm-5"> ... </div>
-
 <div class="col col-sm-4"> ... </div>
-
 <div class="col-auto"> ... </div>
 ```
 
 Now you can see how the web page has been turned into a mobile-first responsive design layout.
 
-
 ### **Using Push, Pull and Offset with column layout classes**
 
 * In the content rows, we would like to have the title and description to alternate so that it gives an interesting look to the web page. For extra small screens, the default stacked layout works best. This can be accomplished by using the .push-sm-* and .pull-sm-* for the first and the third rows as follows:
 
-```
+```html
 <div class="col-sm-4 push-sm-8 col-md-3 push-md-9"> ... </div>
-
 <div class="col-sm pull-sm-4 col-md pull-md-3"> ... </div>
 
 ```
@@ -130,9 +125,8 @@ Now you can see how the web page has been turned into a mobile-first responsive 
 
 * Using Flex ordering, we can achieve the same effect that we achieved with the push and pull classes above. To do this, you can update the two div classes above as follows:
 
-```
-div class="col-sm-4 col-md-3 flex-last"> ... </div>
-
+```html
+<div class="col-sm-4 col-md-3 flex-last"> ... </div>
 <div class="col-sm col-md flex-first"> ... </div>
 ```
 
@@ -146,7 +140,7 @@ div class="col-sm-4 col-md-3 flex-last"> ... </div>
 
 * Create a folder named **css**. Then create a file named styles.css in the **css** folder. Open this file to edit the contents. Add the following CSS code to the file:
 
-```
+```css
 .row-header{
     margin:0px auto;
     padding:0px;
@@ -172,7 +166,7 @@ div class="col-sm-4 col-md-3 flex-last"> ... </div>
 
 * Then add these classes to the corresponding rows in the *index.html* file as follows. See the difference in the index.html file in the browser. The first one is for the row in the `<header>`, the next three for the rows in the content, and the last one directly to the `<footer>` tag.
 
-```
+```html
 <div class="row row-header"> ... </div>
 
 <div class="row row-content"> ... </div>
@@ -186,7 +180,7 @@ div class="col-sm-4 col-md-3 flex-last"> ... </div>
 
 * Our next set of customization is to the jumbotron and the address. Add the following to *styles.css* file:
 
-```
+```css
 jumbotron {
     padding:70px 30px 70px 30px;
     margin:0px auto;
@@ -215,7 +209,7 @@ address{
 
 * Update the copyright paragraph as follows:
 
-```
+```html
 <div class="row justify-content-center">             
 <div class="col-auto">
 ```
@@ -251,4 +245,79 @@ In this task you will be adding appropriate formatting to the web page contents 
 In this task you will use some responsive utilities provided by Bootstrap to hide some of the content only for extra small screens. You will make use of the `hidden-*` CSS classes provided by Bootstrap. To understand how to use these classes, please read the documentation here to learn how to apply the `hidden-*` classes. This will get you into the habit of consulting the Bootstrap documentation whenever you need to learn more about the various components and classes of Bootstrap. You should apply the classes so that the detailed descriptions of the corporate leadership is hidden only for extra small screens. Thus, your page should look like the figure below on extra small screens.
 
 ![Web page for extra small  screen size](img/hidden-xs-down.png?raw=true "Web page for extra small  screen size")
+
+#  **Navbar and Breadcrumbs**
+
+###  **Create a basic navigation bar**
+
+* We will now add a simple navigation bar to the web page so that it provides links to the other pages on the website. Start by adding the following code to the body just above the header jumbotron.
+
+```html
+<nav class="navbar navbar-inverse navbar-toggleable-sm bg-primary fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">Ristorante Con Fusion</a>
+            <ul class="navbar-nav">
+                <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="./aboutus.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Menu</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            </ul>            
+    </div>
+</nav>
+```
+
+In the above code, we can see the use of the nav element to specify the navigation information for the website. This nav element is styled by the *navbar* that declares it as a navigation bar, and the *navbar-inverse* class to specify that the page should use the dark navigation bar. You will now notice the addition of a link with the name of the restaurant. This is the brand name for the website. You can replace this with the logo for the website. This is created by the `<a class="navbar-brand">` tag. In addition the inner ul is used to specify the items to be put in the navigation bar. This *ul* is styled with *navbar-nav* class to specify that the items should be displayed inline inside the navigation bar. We also use the container class inside the navigation bar.
+
+###  **Creating a responsive navigation bar**
+
+* We would like the navigation bar elements to collapse for shorter screens, to be replaced by a toggle button so that the items can be toggled on or off when required on small and extra small screens. This can be achieved by adding the following code to the navigation bar, just below the container div.
+
+```html
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+    <span class="navbar-toggler-icon"></span>
+</button>
+```
+
+This creates a button with three horizontal lines. For medium to extra large screens, this button is hidden. For small and extra small screens, this button becomes visible. This button will act as the toggle for the navbar items.
+
+* To hide the items from the navigation bar for the small screens, we need to enclose the *ul* within another div as follows:
+
+```html
+<div class="collapse navbar-collapse" id="Navbar">
+    <ul class="navbar-nav"> ... </ul>
+</div>
+```
+
+By doing this, we are specifying that this div with *collapse* and *navbar-collapse* classes and with the id *Navbar* will be collapsed on small and xs screens, but can be toggled on or off when the toggle button is clicked. Note the use of `data-toggle="collapse" data-target="#Navbar"` within the button above. This specifies that the menu items are collapsed on small and xs screens when the toggle button is visible. They can be displayed or hidden by clicking the toggle button.
+
+* Copy and paste the entire navbar code also into *aboutus.html* to add the navigation also to that page. Make sure to change the `<li>` corresponding to "About" to *active*, and remove the active class from the Home link. Also, update the home link to take you back to *index.html*. Update the navbar-brand tag also to take you back to *index.html*.
+
+###  **Modifications to the CSS styles**
+
+* We would like to have the navigation bar displayed in darker purple color, instead of the current color. In addition, when we use the fixed navigation bar, we should give the body of the page an upper margin of 50px, so that the top 50px of the page does not get hidden under the navigation bar. We accomplish these by adding these CSS customisations to the *styles.css* file
+
+```css
+body{
+    padding:50px 0px 0px 0px;
+    z-index:0;
+}
+
+.navbar-inverse {
+     background-color: #512DA8;
+}
+```
+
+* Remember to delete the *bg-primary* class from the `<nav>` element in both *index.html* and *aboutus.html*.
+
+###  **Adding Breadcrumbs**
+
+* To add breadcrumbs to our pages, we take the help of the breadcrumb and breadcrumb-item classes to add the following to the row containing the About Us title in *aboutus.html*.
+
+```html
+<ol class="col-12 breadcrumb">
+    <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+    <li class="breadcrumb-item active">About Us</li>
+</ol>
+```
+
 
