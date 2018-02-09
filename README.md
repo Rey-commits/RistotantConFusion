@@ -252,4 +252,3 @@ In this task you will use some responsive utilities provided by Bootstrap to hid
 
 ![Web page for extra small  screen size](img/hidden-xs-down.png?raw=true "Web page for extra small  screen size")
 
-###  **Applying Inline CSS**
