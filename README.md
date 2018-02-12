@@ -320,4 +320,87 @@ body{
 </ol>
 ```
 
+#  **Icon Fonts**
+
+###  **Using Icon Fonts and Other CSS classes**
+
+* One of the most popular icon font toolkit is Font Awesome. Go to its website http://fontawesome.io/ to check out more details about this icon font. You can get Font Awesome using npm by typing the following at the prompt:
+
+`npm install font-awesome --save`
+
+* Download the bootstrap-social.css file given below to *conFusion/css* folder. This is a modified version of the bootstrap-social available on the http://lipis.github.io/bootstrap-social/. We added in support for G+ and YouTube buttons.
+
+* We now need to include the CSS files for font awesome and bootstrap-social in the index.html file. Add the following code to the head of the file after the links for importing Bootstrap CSS classes:
+
+```html
+<link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/bootstrap-social.css">
+```
+
+* Let us now use some font icons in our web page and decorate it. Update the navbar's ul list items as follows in index.html:
+
+```html
+ <li class="nav-item active">
+     <a class="nav-link" href="#"><span class="fa fa-home fa-lg"></span> Home</a>
+ </li>
+<li class="nav-item">
+    <a class="nav-link" href="./aboutus.html"><span class="fa fa-info fa-lg"></span> About</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span> Menu</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="#"><span class="fa fa-address-card fa-lg"></span> Contact</a>
+</li>
+```
+* Similarly update the navbar's ul list items as follows in aboutus.html:
+
+```html
+<li class="nav-item">
+    <a class="nav-link" href="./index.html"><span class="fa fa-home fa-lg"></span> Home</a>
+</li>
+<li class="nav-item active">
+    <a class="nav-link" href="#"><span class="fa fa-info fa-lg"></span> About</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span> Menu</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="#"><span class="fa fa-address-card fa-lg"></span> Contact</a>
+</li>
+```
+* Next, in both index.html and aboutus.html, go down to the address in the footer of the page and replace the "Tel.", "Fax" and "Email" with the corresponding font awesome based icons as follows:
+
+```html
+<i class="fa fa-phone fa-lg"></i>: +852 1234 5678<br>
+<i class="fa fa-fax fa-lg"></i>: +852 8765 4321<br>
+<i class="fa fa-envelope fa-lg"></i>: <a href="mailto:confusion@food.net">confusion@food.net</a>
+```
+* Finally, let us use the bootstrap-social CSS classes to create the social buttons in the footer in both index.html and aboutus.html, by replacing the social sites' links with the following code:
+
+```html
+ <div style="text-align:center">
+    <a class="btn btn-social-icon btn-google-plus" href="http://google.com/+">
+        <i class="fa fa-google-plus"></i>
+    </a>
+    <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id=">
+        <i class="fa fa-facebook"></i>
+    </a>
+    <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/">
+        <i class="fa fa-linkedin"></i>
+    </a>
+    <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/">
+        <i class="fa fa-twitter"></i>
+    </a>
+    <a class="btn btn-social-icon btn-youtube" href="http://youtube.com/">
+        <i class="fa fa-youtube"></i>
+    </a>
+    <a class="btn btn-social-icon" href="mailto:">
+        <i class="fa fa-envelope-o"></i>
+    </a>
+</div>
+```
+
+
+
 
