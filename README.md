@@ -401,6 +401,20 @@ body{
 </div>
 ```
 
+#  **Buttons**
 
+###  **Adding a Button Bar**
+
+* We are now going to add content to *contactus.html* file to learn more about buttons and button bars. Go to the div where we specify "Button group goes here", and replace it with the following code to create a button bar containing three buttons:
+
+```html
+ <div class="btn-group" role="group">
+    <a role="button" class="btn btn-primary" href="tel:+85212345678"><i class="fa fa-phone"></i> Call</a>
+    <a role="button" class="btn btn-info"><i class="fa fa-skype"></i> Skype</a>
+    <a role="button" class="btn btn-success" href="mailto:confusion@food.net"><i class="fa fa-envelope-o"></i> Email</a>
+</div>
+```
+
+Note how we define the button bar using the *btn-group* class, and then add the three buttons using the `<a>` tag. In this case, the three buttons are hyperlinks that cause an action and have an href associated with them. So we decided to use the `<a>` tag instead of the `<button>` tag. Note how the `<a>` tags have been styled using the *btn* class.
 
 
