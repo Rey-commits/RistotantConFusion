@@ -417,4 +417,99 @@ body{
 
 Note how we define the button bar using the *btn-group* class, and then add the three buttons using the `<a>` tag. In this case, the three buttons are hyperlinks that cause an action and have an href associated with them. So we decided to use the `<a>` tag instead of the `<button>` tag. Note how the `<a>` tags have been styled using the *btn* class.
 
+#  **Forms**
 
+###  **Adding a Basic Form**
+
+Add the following code to page to create a simple horizontal form with two fields:
+
+```html
+<form>
+    <div class="form-group row">
+        <label for="firstname" class="col-md-2 col-form-label">First Name</label>
+        <div class="col-md-10">
+            <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="lastname" class="col-md-2 col-form-label">Last Name</label>
+        <div class="col-md-10">
+            <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name">
+        </div>
+    </div>
+</form>
+```
+
+This creates a form with two elements in the form. Note that the class *row* in the form enables us to use the Bootstrap grid system. Hence we can style the contents using the column classes as appropriate.
+
+###  **Adding a Input Group with addons**
+
+* We now see the use of an input-group together with input-group-addons. Let us add fields to seek user's telephone number and email:
+
+```html
+<div class="form-group row">
+    <label for="telnum" class="col-12 col-md-2 col-form-label">Contact Tel.</label>
+    <div class="col-5 col-sm-4 col-md-3">
+        <div class="input-group">
+            <div class="input-group-addon">(</div>
+            <input type="tel" class="form-control" id="areacode" name="areacode" placeholder="Area code">
+            <div class="input-group-addon">)</div>
+        </div>
+    </div>
+    <div class="col-7 col-sm-6 col-md-7">
+        <input type="tel" class="form-control" id="telnum" name="telnum" placeholder="Tel. number">
+    </div>
+</div>
+<div class="form-group row">
+    <label for="emailid" class="col-md-2 col-form-label">Email</label>
+    <div class="col-md-10">
+        <input type="email" class="form-control" id="emailid" name="emailid" placeholder="Email">
+    </div>
+</div>
+```
+Note the use of the *input-group* and *input-group-addon* classes.
+
+###  **Adding a Checkbox and Select**
+
+* We now see the addition of a checkbox and a select element to the form. Note the styling of these elements using Bootstrap classes:
+
+```html
+<div class="form-group row">
+    <div class="form-check col-md-6 offset-md-2">
+        <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" name="approve" value="">
+            <strong>May we contact you?</strong>
+        </label>
+    </div>
+    <div class="col-md-3 offset-md-1">
+        <select class="form-control">
+            <option>Tel.</option>
+            <option>Email</option>
+        </select>
+    </div>
+</div>
+```
+###  **Adding a textarea**
+
+* Next we add a textarea for the users to submit their feedback comments as follows:
+* 
+```html
+<div class="form-group row">
+    <label for="feedback" class="col-md-2 col-form-label">Your Feedback</label>
+    <div class="col-md-10">
+        <textarea class="form-control" id="feedback" name="feedback" rows="12"></textarea>
+    </div>
+</div>
+```
+
+###  **Adding the Submit Button**
+
+* Finally, we add the submit button to the form as follows:
+
+```html
+<div class="form-group row">
+    <div class="offset-md-2 col-md-10">
+        <button type="submit" class="btn btn-primary">Send Feedback</button>
+    </div>
+</div>
+```
