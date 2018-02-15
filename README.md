@@ -616,3 +616,53 @@ Note the use of *table-responsive* class to create a responsive table, and the *
 
 Note the use of the `<blockquote>` tag to create a block quote in the card. We can use a `<footer>` inside the block quote to specify the attribution of the quote to its origin.
 
+#  **Images and Media**
+
+###  **Adding the Restaurant Logo**
+
+* We will now add the restaurant logo to the Jumbotron. In index.html go to the header row inside the jumbotron and replace the second `<div>` column with the following code:
+
+```html
+<div class="col col-sm align-self-center">
+    <img src="img/logo.png" class="img-fluid">
+</div>
+```
+
+* Next, we will add the logo to the navbar where we display the restaurant brand. Go to the navbar and replace the code there for the `<a>` tag with the "navbar-brand" class with the following code:
+
+```html
+<a class="navbar-brand" href="#"><img src="img/logo.png" height="30" width="41"></a>
+```
+* Repeat the above two steps for the *aboutus.html* and the *contactus.html* page also to update their navbars and jumbotrons.
+
+###  **Adding Media Objects**
+
+* Next we will work with the content on the web page and use the media object classes to style the content in the content rows.
+
+* Go to the first content row, and replace the content in the second column containing the description of Uthappizza with the following code:
+
+```html
+<div class="media">
+    <img class="d-flex mr-3 img-thumbnail align-self-center" src="img/uthappizza.png" alt="Uthappizza">
+    <div class="media-body">
+        <h2 class="mt-0">Uthappizza</h2>
+        <p class="hidden-xs-down">A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and      Buffalo Paneer.
+        </p>
+    </div>
+</div>
+```
+
+* Next, we will go to the third row and replace the contents of the second column containing the description about Alberto with the following content:
+
+```html
+ <div class="media">
+    <img class="d-flex mr-3 img-thumbnail align-self-center" src="img/alberto.png" alt="Alberto Somayya">
+    <div class="media-body">
+        <h2 class="mt-0">Alberto Somayya</h2>
+        <h4>Executive Chef</h4>
+        <p class="hidden-xs-down">Award winning three-star Michelin chef with wide                          International experience having worked closely with whos-who in the culinary world, he specializes in
+        creating mouthwatering Indo-Italian fusion experiences.
+        </p>
+    </div>
+</div>
+```
