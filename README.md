@@ -513,3 +513,106 @@ Note the use of the *input-group* and *input-group-addon* classes.
     </div>
 </div>
 ```
+
+#  **Displaying Content: Tables and Cards**
+
+###  **Bootstrap Tables**
+
+* In this part, we will add a new row of content after the Corparate Leadership row in the page. We first start by adding a row and columns to the page as follows:
+
+```html
+<div class="row row-content">
+    <div class="col-12 col-sm-9">
+        <h2>Facts &amp; Figures</h2>
+    </div>
+    <div class="col-12 col-sm-3">
+    </div>
+</div> 
+```
+* Inside the first column of this row, insert the table as follows:
+
+```html
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead class="thead-inverse">
+            <tr>
+                <th>&nbsp;</th>
+                <th>2013</th>
+                <th>2014</th>
+                <th>2015</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Employees</th>
+                <td>15</td>
+                <td>30</td>
+                <td>40</td>
+            </tr>
+            <tr>
+                <th>Guests Served</th>
+                <td>15000</td>
+                <td>45000</td>
+                <td>100,000</td>
+            </tr>
+            <tr>
+                <th>Special Events</th>
+                <td>3</td>
+                <td>20</td>
+                <td>45</td>
+            </tr>
+            <tr>
+                <th>Annual Turnover</th>
+                <td>$251,325</td>
+                <td>$1,250,375</td>
+                <td>~$3,000,000</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+```
+Note the use of *table-responsive* class to create a responsive table, and the *table-striped* and *thead-inverse* classes for styling the table.
+
+###  **Bootstrap Cards**
+
+* Next we add a card to the second div in the first content row as follows, updating the div first by adding the classes col-12 col-sm-6 to it and then adding the card:
+
+```html
+<div class="col-12 col-sm-6">
+    <div class="card">
+        <h3 class="card-header bg-primary text-white">Facts At a Glance</h3>
+        <div class="card-block">
+            <dl class="row">
+                <dt class="col-6">Started</dt>
+                <dd class="col-6">3 Feb. 2013</dd>
+                <dt class="col-6">Major Stake Holder</dt>
+                <dd class="col-6">HK Fine Foods Inc.</dd>
+                <dt class="col-6">Last Year's Turnover</dt>
+                <dd class="col-6">$1,250,375</dd>
+                <dt class="col-6">Employees</dt>
+                <dd class="col-6">40</dd>
+            </dl>
+        </div>
+    </div>
+</div>
+```
+* Next, we add a Bootstrap card and include a quotation in the card using the blockquote typography style:
+
+```html
+ <div class="col-12">
+    <div class="card card-block bg-faded">
+        <blockquote class="blockquote">
+            <p class="mb-0">You better cut the pizza in four pieces because
+                            I'm not hungry enough to eat six.</p>
+            <footer class="blockquote-footer">Yogi Berra,
+                <cite title="Source Title">
+                    The Wit and Wisdom of Yogi Berra, P. Pepe, Diversion Books, 2014
+                </cite>
+            </footer>
+        </blockquote>
+    </div>
+</div>
+```
+
+Note the use of the `<blockquote>` tag to create a block quote in the card. We can use a `<footer>` inside the block quote to specify the attribution of the quote to its origin.
+
