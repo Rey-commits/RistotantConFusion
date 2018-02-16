@@ -666,3 +666,18 @@ Note the use of the `<blockquote>` tag to create a block quote in the card. We c
     </div>
 </div>
 ```
+#  **Alerting Users**
+
+###  **Adding Badges**
+
+* We will continue to edit the *index.html* file. In this file, we will add a badge *HOT* next to the name of the dish Uthappizza in the first content row. To do this, add the following code inside the `<h2>` containing the name of the dish:
+
+```html
+<span class="badge badge-danger">HOT</span>
+```
+
+* Next we will add a badge as a badge-pill right next to the earlier tag in the web page. Add the following code to the `<h2>` tag:
+
+```html
+<span class="badge badge-pill badge-default">$4.99</span>
+```
