@@ -682,5 +682,66 @@ Note the use of the `<blockquote>` tag to create a block quote in the card. We c
 <span class="badge badge-pill badge-default">$4.99</span>
 ```
 
+#  **Tabs**
+
+### **Adding Tab Navigation Elements**
+
+* Open the *aboutus.html* page and move to the second content row containing the details of the corporate leadership of the restaurant.
+* Right after the Corporate Leadership heading, introduce the following code to set up the tabbed navigation:
+
+```html
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a class="nav-link active" href="#peter" role="tab" data-toggle="tab">Peter Pan, CEO</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#danny" role="tab" data-toggle="tab">Danny Witherspoon, CFO</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#agumbe"role="tab" data-toggle="tab">Agumbe Tang, CTO</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#alberto" role="tab" data-toggle="tab">Alberto Somayya, Exec. Chef</a>
+    </li>
+</ul>
+```
+
+Note the use of the `<ul>` tag with the nav and *nav-tabs* classes to set up the tab navigation. Each list item within the list acts as the tab element. Within each list item, note that we set up the `<a>` tags with the *href* pointing to the *id* of the tab pane of content to be introduced later. Also note that the `<a>` tag contains the *data-toggle=tab* attribute. The first list element's `<a>` tag contains the class active. This tab will be the open tab when we view the web page. We can switch to the other tabs using the tabbed navigation that we just set up.
+
+### **Adding Tab Content**
+
+* The details about the various corporate leaders should now be organized into various tab panes. To begin this, we will enclose the entire content into a div element with the class tab-content as specified below:
+
+```html
+<div class="tab-content">
+    ...
+</div>
+```
+
+* Then we take the name and description of the CEO of the company and enclose it within a tab-pane as follows
+
+```html
+<div role="tabpanel" class="tab-pane fade show active" id="peter">
+    <h3>Peter Pan <small>Chief Epicurious Officer</small></h3>
+    <p> ... </p>
+</div>
+```
+
+Note the use of the *tab-pane*, *fade*, *show*, and *active* classes and with *peter* as the id. This is the same id used as the *href* in the `<a>` link in the navigation.
+
+* The remaining content is also similarly enclosed inside appropriate divs with the correct ids and the classes specified as above. Only the first tab pane will have the *show* and *active* classes specified to indicate that the content should be visible on the web page by default.
+
+### **Modifying the tab-content CSS**
+
+* We now modify the CSS styles for the tab-content class in the mystyles.css file as follows:
 
 
+```css
+.tab-content {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+```
+This modification adds a 1px border to the tab content which joins with the upper border introduced by the tab navigation element to give a clean tab like appearance.
