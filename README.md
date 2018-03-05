@@ -745,3 +745,33 @@ Note the use of the *tab-pane*, *fade*, *show*, and *active* classes and with *p
 }
 ```
 This modification adds a 1px border to the tab content which joins with the upper border introduced by the tab navigation element to give a clean tab like appearance.
+
+# **Converting Tabs to Accordion**
+
+* First delete the `<ul>` class that was introduced for the tabbed navigation.
+* Then the turn the *tab-content* div into a *accordion div*. Use the code structure as shown below:
+
+```html
+<div id="accordion" role="tablist">
+    . . .
+</div>
+```
+
+* Then, convert the first tab-pane into a card such that the name appears as a card heading, and the `<p>` will be in the card body. Use the structure of the code as shown below:
+
+```html
+<div class="card">
+    <div class="card-header" role="tab" id="peterhead">
+        <h3 class="mb-0">
+            <a data-toggle="collapse" data-parent="#accordion" href="#peter">
+                Peter Pan <small>Chief Epicurious Officer</small>
+            </a>
+        </h3>
+    </div>
+    <div role="tabpanel" class="collapse show" id="peter">
+        <div class="card-block">
+            <p class="hidden-xs-down">. . .</p>
+        </div>
+    </div>
+</div>
+```
