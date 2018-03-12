@@ -903,3 +903,87 @@ This script is added right after the line that imports the bootstrap.min.js file
 ```
 We are introducing another link to the right of the navbar using the *navbar-text* and using the *mr-auto* class to the `<ul>` as shown above. This contains a link with an `<a>` tag with the *data-toggle="modal"* and *data-target="#loginModal"* attributes.
 
+# **Carousel**
+
+### **Adding a row for the carousel**
+
+* The carousel will be added to the *index.html* page. In this page, go to the top of the container div that contains the content of the page and add a new content row and an inner div spanning all the 12 columns as follows:
+
+```html
+<div class="row row-content">
+    <div class="col">
+    </div>
+</div>
+```
+### **Adding a Carousel**
+
+* Next, add the basic carousel div inside the content row that you just added as follows:
+
+```html
+<div id="mycarousel" class="carousel slide" data-ride="carousel">
+</div>
+```
+
+### **Adding Carousel Content**
+
+* Next add the content inside the carousel as follows:
+
+```html
+<div class="carousel-inner" role="listbox">
+    <div class="carousel-item active">
+        <img class="d-block img-fluid" src="img/uthappizza.png" alt="Uthappizza">
+        <div class="carousel-caption d-none d-md-block">
+            <h2>Uthappizza <span class="badge badge-danger">HOT</span> <span class="badge badge-pill badge-default">$4.99</span></h2>
+            . . .
+        </div>
+    </div>
+    <div class="carousel-item">
+        . . .
+    </div>
+    <div class="carousel-item">
+    . . .
+    </div>
+</div>
+```
+### **Adding CSS Classes**
+
+* Add the following CSS classes to the *mystyles.css* file:
+
+```css
+.carousel {
+    background:#512DA8;
+}
+.carousel-item {
+    height: 300px;
+}
+.carousel-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 300px;
+}
+```
+
+### **Adding Carousel Controls**
+
+* Next, we will add manual controls to the carousel so that we can manually move among the slides. Add the following code to the bottom after the carousel items in the div of the carousel to add slide indicators that enable us to select a specific slide:
+
+```html
+<ol class="carousel-indicators">
+    <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#mycarousel" data-slide-to="1"></li>
+    <li data-target="#mycarousel" data-slide-to="2"></li>
+</ol>
+```
+
+* Then, add the left and right controls to the carousel that enable us to move to the previous and next slide manually. Add this to the bottom of the carousel div:
+
+```html
+<a class="carousel-control-prev" href="#mycarousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+</a>
+<a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+</a>
+```
+
