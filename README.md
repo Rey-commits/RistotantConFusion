@@ -775,3 +775,131 @@ This modification adds a 1px border to the tab content which joins with the uppe
     </div>
 </div>
 ```
+
+* For the remaining three leaders, use the same structure as above, with the appropriate ids set up for the cards, as shown in the code structure below:
+
+```html
+<div class="card">
+    <div class="card-header" role="tab" id="dannyhead">
+        <h3 class="mb-0">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#danny">
+                Dhanasekaran Witherspoon <small>Chief Food Officer</small>
+            </a>
+        </h3>
+    </div>
+    <div role="tabpanel" class="collapse" id="danny">
+        <div class="card-block">
+            <p class="hidden-xs-down">. . .</em></p>
+        </div>
+    </div>
+</div>
+<div class="card">
+    <div class="card-header" role="tab" id="agumbehead">
+        <h3 class="mb-0">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#agumbe">
+                Agumbe Tang <small>Chief Taste Officer</small>
+            </a>
+        </h3>
+    </div>
+    <div role="tabpanel" class="collapse" id="agumbe">
+        <div class="card-block">
+            <p class="hidden-xs-down">. . .</em></p>
+        </div>
+    </div>
+</div>
+<div class="card">
+    <div class="card-header" role="tab" id="albertohead">
+        <h3 class="mb-0">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#alberto">
+                Alberto Somayya <small>Executive Chef</small>
+            </a>
+        </h3>
+    </div>
+    <div role="tabpanel" class="collapse" id="alberto">
+        <div class="card-block">
+            <p class="hidden-xs-down">. . .</em></p>
+        </div>
+    </div>
+</div>
+```
+
+# **Tooltips and Modals**
+
+### **Adding a Tooltip**
+
+* Let us now switch to the *index.html* page. We will now add a tooltip to this page. The tooltip will be added to the "Reserve Table" button that is in the jumbotron. We will update the `<a>` tag for the button as follows:
+
+```html
+<a type="button" class="btn btn-warning btn-sm btn-block" data-toggle="tooltip" data-html="true"  
+   title="Or Call us at  <br><strong>+852 12345678</strong>" data-placement="bottom" href="#reserveform">
+```
+
+As you can see from the code, we add a **data-toggle**, **data-placement** and a **title** attribute to the `<a>` tag in order to introduce a tooltip.
+
+* The tooltip needs to be activated by adding a small Javascript code to the bottom of the page as follows:
+
+```html
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+```
+
+This script is added right after the line that imports the bootstrap.min.js file.
+
+### **Adding a Modal**
+
+* In the next step we introduce the modal to the web page. To set up the modal, add the following code right after the navbar at the top of the page.
+
+```html
+<div id="loginModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg" role="content">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Login </h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label class="sr-only" for="exampleInputEmail3">Email address</label>
+                        <input type="email" class="form-control form-control-sm mr-1" id="exampleInputEmail3" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" for="exampleInputPassword3">Password</label>
+                        <input type="password" class="form-control form-control-sm mr-1" id="exampleInputPassword3" placeholder="Password">
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="checkbox"> Remember me
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-primary btn-sm">Sign in</button>
+            </div>
+        </div>
+    </div>
+</div>
+```
+
+* Next we introduce another link on the right side of the navbar in order to trigger the display of the modal. To do this, add the following code in the navbar after the `</ul>`:
+
+```html
+<span class="navbar-text">
+    <a data-toggle="modal" data-target="#loginModal">
+    <span class="fa fa-sign-in"></span> Login</a>
+</span>
+```
+
+* In addition, add the *mr-auto* class to the `<ul>` in the navbar as follows:
+]
+```html
+<ul class="navbar-nav mr-auto">`
+```
+We are introducing another link to the right of the navbar using the *navbar-text* and using the *mr-auto* class to the `<ul>` as shown above. This contains a link with an `<a>` tag with the *data-toggle="modal"* and *data-target="#loginModal"* attributes.
+
