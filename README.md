@@ -989,7 +989,7 @@ We are introducing another link to the right of the navbar using the *navbar-tex
 
 # **Assignment 3: Bootstrap JavaScript Components**
 
-##**Task 1**
+## **Task 1**
 
 In this task you will move the table reservation form from the last content row into a modal. You should also remove the last content row.
 
@@ -997,14 +997,14 @@ In this task you will move the table reservation form from the last content row 
 * Add a Cancel button in the form that will dismiss the modal when clicked.
 * The modal header should contain a X button to dismiss the modal.
 
-##**Task 2**
+## **Task 2**
 
 In this task you will be adding a radio button group to the form to allow the selection of the smoking/non-smoking section of the restaurant.
 
 * The radio button group should start out with the non-smoking section selected by default.
 * The row containing the button group will have the label Section displayed preceding it in the form.
 
-##**Task 3**
+## **Task 3**
 
 In this task you will be updating the Reserve Table button in the Jumbotron:
 
@@ -1013,7 +1013,7 @@ In this task you will be updating the Reserve Table button in the Jumbotron:
 
 At the end of this assignment, your index.html file should look like this:
 
-![Modal to reserve table](modal-reserve-table.png?raw=true "Modal to reserve table")
+![Modal to reserve table](img/modal-reserve-table.png?raw=true "Modal to reserve table")
 
 
 
