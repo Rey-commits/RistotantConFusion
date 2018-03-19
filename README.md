@@ -989,7 +989,7 @@ We are introducing another link to the right of the navbar using the *navbar-tex
 
 # **Assignment 3: Bootstrap JavaScript Components**
 
-## **Task 1**
+### **Task 1**
 
 In this task you will move the table reservation form from the last content row into a modal. You should also remove the last content row.
 
@@ -997,14 +997,14 @@ In this task you will move the table reservation form from the last content row 
 * Add a Cancel button in the form that will dismiss the modal when clicked.
 * The modal header should contain a X button to dismiss the modal.
 
-## **Task 2**
+### **Task 2**
 
 In this task you will be adding a radio button group to the form to allow the selection of the smoking/non-smoking section of the restaurant.
 
 * The radio button group should start out with the non-smoking section selected by default.
 * The row containing the button group will have the label Section displayed preceding it in the form.
 
-## **Task 3**
+### **Task 3**
 
 In this task you will be updating the Reserve Table button in the Jumbotron:
 
@@ -1014,6 +1014,57 @@ In this task you will be updating the Reserve Table button in the Jumbotron:
 At the end of this assignment, your index.html file should look like this:
 
 ![Modal to reserve table](img/modal-reserve-table.png?raw=true "Modal to reserve table")
+
+# **Bootstrap and JQuery**
+
+### **Adding the Carousel Control Buttons**
+
+We will introduce two new buttons into the carousel component that we already included in the index.html page. To add the two buttons to the carousel, add the following code to the end of the carousel:
+
+```html
+<div class="btn-group" id="carouselButtons">
+    <button class="btn btn-danger btn-sm" id="carousel-pause">
+        <span class="fa fa-pause"></span>
+    </button>
+    <button class="btn btn-danger btn-sm" id="carousel-play">
+        <span class="fa fa-play"></span>
+    </button>
+</div>
+```
+We are adding the two buttons inside a button group with the ID carouselButtons. The two buttons contain the pause and play glyphicons to indicate their corresponding actions.
+
+### **Adding CSS Class for the Buttons**
+
+* Next, we add the following CSS class to styles.css file to position the buttons at the bottom-right corner of the carousel:
+
+```css
+#carouselButtons {
+    right:0px;
+    position: absolute;
+    bottom: 0px;
+}
+```
+
+### **Adding JavaScript Code**
+
+* Finally we add the following JavaScript code to activate the buttons:
+
+```html
+<script>
+    $(document).ready(function(){
+        $("#mycarousel").carousel( { interval: 2000 } );
+        $("#carousel-pause").click(function(){
+            $("#mycarousel").carousel('pause');
+        });
+        $("#carousel-play").click(function(){
+            $("#mycarousel").carousel('cycle');
+        });
+    });
+</script>
+```
+
+
+
 
 
 
