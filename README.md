@@ -1063,6 +1063,49 @@ We are adding the two buttons inside a button group with the ID carouselButtons.
 </script>
 ```
 
+### **Modifying the Carousel Control Buttons**
+
+* We will modify the carousel control buttons in the carousel component that we already included in the index.html page. Instead of two buttons, we will use a single button that will indicate if the carousel is currently cycling or paused. Furthermore we can use the button to toggle the carousel cycling behavior:
+
+```html
+<button class="btn btn-danger btn-sm" id="carousel-button">
+    <span id="carousel-button-icon" class="fa fa-pause"></span>
+</button>
+```
+
+#### **Modifying CSS Class for the Button**
+
+* Next, we add the following CSS class to styles.css file to position the button at the bottom-right corner of the carousel:
+
+```css
+#carousel-button {
+    right:0px;
+    position: absolute;
+    bottom: 0px;
+}
+```
+
+### **Modifying JavaScript Code**
+
+* Finally we modify the JavaScript code to control the behavior of the carousel and also show the appropriate button:
+
+```javascript
+$("#carousel-button").click(function(){
+    if ($("#carousel-button").children("span").hasClass('fa-pause')) {
+        $("#mycarousel").carousel('pause');
+        $("#carousel-button").children("span").removeClass('fa-pause');
+        $("#carousel-button").children("span").addClass('fa-play');
+    }
+    else if ($("#carousel-button").children("span").hasClass('fa-play')){
+        $("#mycarousel").carousel('cycle');
+        $("#carousel-button").children("span").removeClass('fa-play');
+        $("#carousel-button").children("span").addClass('fa-pause');          
+    }
+});
+```
+
+
+
 
 
 
