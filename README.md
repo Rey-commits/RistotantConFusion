@@ -1103,11 +1103,120 @@ $("#carousel-button").click(function(){
     }
 });
 ```
+# **Less**
 
+### **Adding Less Variables**
 
+* Open the *conFusion* project in a text editor of your choice. In the css folder, create a file named *styles.less*. We will add the Less code into this file.
+* Add the following Less variables into the file:
 
+```less
+@lt-gray: #ddd;
+@background-dark: #512DA8;
+@background-light: #9575CD;
+@background-pale: #D1C4E9;
 
+// Height variables
+@carousel-item-height: 300px;
+```
 
+### **Less Mixins**
+
+* Next we add a mixin into the file as follows:
+
+```less
+zero-margin (@pad-up-dn: 0px, @pad-left-right: 0px) {
+	margin:0px auto;
+	padding: @pad-up-dn @pad-left-right;
+}
+```
+We will make use of this to define several row classes next.
+
+* Using the variables and Mixin class that we defined earlier, add the following row classes to the file:
+
+```less
+.row-header {
+    .zero-margin();
+}
+
+.row-content {
+    .zero-margin(50px,0px);
+    border-bottom: 1px ridge;
+    min-height:400px;
+}
+
+.footer {
+    background-color: @background-pale;
+    .zero-margin(20px, 0px);
+}
+
+.jumbotron {
+    .zero-margin(70px,30px);
+    background: @background-light ;
+    color:floralwhite;
+}
+
+address {
+    font-size:80%;
+    margin:0px;
+    color:#0f0f0f;
+}
+
+body {
+    padding:50px 0px 0px 0px;
+    z-index:0;
+}
+
+.navbar-inverse {
+     background-color: @background-dark;
+}
+.tab-content {
+    border-left: 1px solid @lt-gray;
+    border-right: 1px solid @lt-gray;
+    border-bottom: 1px solid @lt-gray;
+    padding: 10px;
+}
+```
+Note the use of the variables and the mixin with various parameters in defining the classes.
+
+### **Nesting Selectors**
+
+* Next we add a carousel class to illustrate the use of nesting of classes in Less, as follows:
+
+```less
+carousel {
+    background:@background-dark;
+
+    .carousel-item {
+        height: @carousel-item-height;
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            min-height: 300px;
+        }
+    }
+}
+
+#carousel-button {
+    right:0px;
+    position: absolute;
+    bottom: 0px;
+}
+```
+
+### **Installing and using the lessc Compiler**
+
+Now we install the node module to support the compilation of the Less file. To do this, type the following at the command prompt:
+
+`npm install -g less`
+
+This will install the *less* NPM module globally so that it can be used by any project. **Note: if you are executing this on a Mac or Linux machine, you may need to add "sudo" to the beginning of this command**. This will make available the *lessc* compiler for us so that we can compile Less files.
+
+* Next, go to the CSS folder on your machine and rename the *styles.css* file that you have there as *styles-old.css*. This is to save the CSS file that we have been using so far. We will be creating a new *styles.css* file by compiling the Less file.
+* Next type the following at the command prompt to compile the Less file into a CSS file:
+
+`lessc styles.less styles.css`
 
 
 
