@@ -1308,7 +1308,7 @@ Note the use of the variables and the mixin with various parameters in defining 
         height: $carousel-item-height;
         img {
             position: absolute;
-            top: 0;
+            top: 0;n
             left: 0;
             min-height: 300px;
         }
@@ -1336,6 +1336,33 @@ This will install the *node-sass* NPM module into your project and also add it a
 * In order to transform the Scss file to a CSS file, type the following at the prompt:
 
 `npm run scss`
+
+# **NPM Scripts Part 1** #
+
+### **Watching for Changes and Parallelshell**
+
+* First, we install two NPM packages *onchange* and *parallelshell* as follows:
+
+`npm install --save-dev onchange parallelshell`
+
+* Then, add the following two script items to *package.json*:
+
+```js
+"watch:scss": "onchange 'css/*.scss' -- npm run scss",
+"watch:all": "parallelshell 'npm run watch:scss' 'npm run lite'"
+```
+
+* You will also update the start script as follows:
+
+`"start": "npm run watch:all",`
+
+* Then, type the following at the prompt to start watching for changes to the SCSS file, compile it to CSS, and run the server:
+
+`npm start`
+
+* Now, whenever you make any changes to styles.scss file, it will automatically be compiled to the corresponding css file.
+
+
 
 
 
