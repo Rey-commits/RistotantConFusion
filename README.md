@@ -1337,7 +1337,7 @@ This will install the *node-sass* NPM module into your project and also add it a
 
 `npm run scss`
 
-# **NPM Scripts Part 1** 
+# **NPM Scripts** 
 
 ### **Watching for Changes and Parallelshell**
 
@@ -1384,7 +1384,7 @@ Remember to use *sudo* on mac and Linux.
 
 `"copyfonts": "copyfiles -f node_modules/font-awesome/fonts/* dist/fonts",`
 
-###**Compressing and Minifying Images**
+### **Compressing and Minifying Images**
 
 * We use the *imagemin-cli* NPM module to help us to compress our images to reduce the size of the images being used in our project. Install the *imagemin-cli* module as follows:
 
@@ -1398,7 +1398,7 @@ Remember to use *sudo* on mac and Linux. Some students have encountered issues w
 
 ` "imagemin": "imagemin img/* -o dist/img",`
 
-###**Preparing the Distribution Folder**
+### **Preparing the Distribution Folder**
 
 * Open *.gitignore* and update it as follows. We do not want the dist folder to be checked into the git repository.
 
