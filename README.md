@@ -130,13 +130,13 @@ Now you can see how the web page has been turned into a mobile-first responsive 
 <div class="col-sm col-md flex-first"> ... </div>
 ```
 
-###  **List styles**
+### **List styles**
 
 * You can use several list styles to display lists in different formats. In this exercise, we will use the unordered list style *list-unstyled* to display the links at the bottom of the page without the bullets. To do this, go to the links in the footer and update the ul as follows
 
 `<ul class="list-unstyled"> ... </ul>`
 
-###  **Using Custom CSS classes**
+### **Using Custom CSS classes**
 
 * Create a folder named **css**. Then create a file named styles.css in the **css** folder. Open this file to edit the contents. Add the following CSS code to the file:
 
@@ -195,7 +195,7 @@ address{
 }
 ```
 
-###  **Vertically Centering the Content**
+### **Vertically Centering the Content**
 
 * In the content section, update all the rows as follows:
 
@@ -205,7 +205,7 @@ address{
 
 `<div class="col col-sm-4 align-self-center">`
 
-###  **Horizontally Centering the Content**
+### **Horizontally Centering the Content**
 
 * Update the copyright paragraph as follows:
 
@@ -214,15 +214,15 @@ address{
 <div class="col-auto">
 ```
 
-###  **Applying Inline CSS**
+### **Applying Inline CSS**
 
 * Update the inner div containing the social media links as follows:
 
 `<div style="text-align:center">`
 
-#  **Assignment 1: Bootstrap and Responsive Design**
+# **Assignment 1: Bootstrap and Responsive Design**
 
-###  **Task 1**
+### **Task 1**
 
 In this task you will be updating the *aboutus.html* page to make use of the Bootstrap classes and components:
 
@@ -230,7 +230,7 @@ In this task you will be updating the *aboutus.html* page to make use of the Boo
 * Update the page to also use your custom styles defined in your *styles.css* file, and
 * Update the page to make use of all the Bootstrap JS components.
 
-###  **Task 2**
+### **Task 2**
 
 In this task you will be adding appropriate formatting to the web page contents using container, row and column classes using the Bootstrap grid so that the web page is formatted to look like the figure given below.
 
@@ -240,15 +240,15 @@ In this task you will be adding appropriate formatting to the web page contents 
 
 ![Web page for normal screen size](img/normal-size.png?raw=true "Web page for normal screen size")
 
-###  **Task 3**
+### **Task 3**
 
 In this task you will use some responsive utilities provided by Bootstrap to hide some of the content only for extra small screens. You will make use of the `hidden-*` CSS classes provided by Bootstrap. To understand how to use these classes, please read the documentation here to learn how to apply the `hidden-*` classes. This will get you into the habit of consulting the Bootstrap documentation whenever you need to learn more about the various components and classes of Bootstrap. You should apply the classes so that the detailed descriptions of the corporate leadership is hidden only for extra small screens. Thus, your page should look like the figure below on extra small screens.
 
 ![Web page for extra small  screen size](img/hidden-xs-down.png?raw=true "Web page for extra small  screen size")
 
-#  **Navbar and Breadcrumbs**
+# **Navbar and Breadcrumbs**
 
-###  **Create a basic navigation bar**
+### **Create a basic navigation bar**
 
 * We will now add a simple navigation bar to the web page so that it provides links to the other pages on the website. Start by adding the following code to the body just above the header jumbotron.
 
@@ -268,7 +268,7 @@ In this task you will use some responsive utilities provided by Bootstrap to hid
 
 In the above code, we can see the use of the nav element to specify the navigation information for the website. This nav element is styled by the *navbar* that declares it as a navigation bar, and the *navbar-inverse* class to specify that the page should use the dark navigation bar. You will now notice the addition of a link with the name of the restaurant. This is the brand name for the website. You can replace this with the logo for the website. This is created by the `<a class="navbar-brand">` tag. In addition the inner ul is used to specify the items to be put in the navigation bar. This *ul* is styled with *navbar-nav* class to specify that the items should be displayed inline inside the navigation bar. We also use the container class inside the navigation bar.
 
-###  **Creating a responsive navigation bar**
+### **Creating a responsive navigation bar**
 
 * We would like the navigation bar elements to collapse for shorter screens, to be replaced by a toggle button so that the items can be toggled on or off when required on small and extra small screens. This can be achieved by adding the following code to the navigation bar, just below the container div.
 
@@ -292,7 +292,7 @@ By doing this, we are specifying that this div with *collapse* and *navbar-colla
 
 * Copy and paste the entire navbar code also into *aboutus.html* to add the navigation also to that page. Make sure to change the `<li>` corresponding to "About" to *active*, and remove the active class from the Home link. Also, update the home link to take you back to *index.html*. Update the navbar-brand tag also to take you back to *index.html*.
 
-###  **Modifications to the CSS styles**
+### **Modifications to the CSS styles**
 
 * We would like to have the navigation bar displayed in darker purple color, instead of the current color. In addition, when we use the fixed navigation bar, we should give the body of the page an upper margin of 50px, so that the top 50px of the page does not get hidden under the navigation bar. We accomplish these by adding these CSS customisations to the *styles.css* file
 
@@ -309,7 +309,7 @@ body{
 
 * Remember to delete the *bg-primary* class from the `<nav>` element in both *index.html* and *aboutus.html*.
 
-###  **Adding Breadcrumbs**
+### **Adding Breadcrumbs**
 
 * To add breadcrumbs to our pages, we take the help of the breadcrumb and breadcrumb-item classes to add the following to the row containing the About Us title in *aboutus.html*.
 
@@ -320,9 +320,9 @@ body{
 </ol>
 ```
 
-#  **Icon Fonts**
+# **Icon Fonts**
 
-###  **Using Icon Fonts and Other CSS classes**
+### **Using Icon Fonts and Other CSS classes**
 
 * One of the most popular icon font toolkit is Font Awesome. Go to its website http://fontawesome.io/ to check out more details about this icon font. You can get Font Awesome using npm by typing the following at the prompt:
 
@@ -401,9 +401,9 @@ body{
 </div>
 ```
 
-#  **Buttons**
+# **Buttons**
 
-###  **Adding a Button Bar**
+### **Adding a Button Bar**
 
 * We are now going to add content to *contactus.html* file to learn more about buttons and button bars. Go to the div where we specify "Button group goes here", and replace it with the following code to create a button bar containing three buttons:
 
@@ -417,9 +417,9 @@ body{
 
 Note how we define the button bar using the *btn-group* class, and then add the three buttons using the `<a>` tag. In this case, the three buttons are hyperlinks that cause an action and have an href associated with them. So we decided to use the `<a>` tag instead of the `<button>` tag. Note how the `<a>` tags have been styled using the *btn* class.
 
-#  **Forms**
+# **Forms**
 
-###  **Adding a Basic Form**
+### **Adding a Basic Form**
 
 Add the following code to page to create a simple horizontal form with two fields:
 
@@ -442,7 +442,7 @@ Add the following code to page to create a simple horizontal form with two field
 
 This creates a form with two elements in the form. Note that the class *row* in the form enables us to use the Bootstrap grid system. Hence we can style the contents using the column classes as appropriate.
 
-###  **Adding a Input Group with addons**
+### **Adding a Input Group with addons**
 
 * We now see the use of an input-group together with input-group-addons. Let us add fields to seek user's telephone number and email:
 
@@ -469,7 +469,7 @@ This creates a form with two elements in the form. Note that the class *row* in 
 ```
 Note the use of the *input-group* and *input-group-addon* classes.
 
-###  **Adding a Checkbox and Select**
+### **Adding a Checkbox and Select**
 
 * We now see the addition of a checkbox and a select element to the form. Note the styling of these elements using Bootstrap classes:
 
@@ -489,7 +489,7 @@ Note the use of the *input-group* and *input-group-addon* classes.
     </div>
 </div>
 ```
-###  **Adding a textarea**
+### **Adding a textarea**
 
 * Next we add a textarea for the users to submit their feedback comments as follows:
 * 
@@ -502,7 +502,7 @@ Note the use of the *input-group* and *input-group-addon* classes.
 </div>
 ```
 
-###  **Adding the Submit Button**
+### **Adding the Submit Button**
 
 * Finally, we add the submit button to the form as follows:
 
@@ -514,9 +514,9 @@ Note the use of the *input-group* and *input-group-addon* classes.
 </div>
 ```
 
-#  **Displaying Content: Tables and Cards**
+# **Displaying Content: Tables and Cards**
 
-###  **Bootstrap Tables**
+### **Bootstrap Tables**
 
 * In this part, we will add a new row of content after the Corparate Leadership row in the page. We first start by adding a row and columns to the page as follows:
 
@@ -573,7 +573,7 @@ Note the use of the *input-group* and *input-group-addon* classes.
 ```
 Note the use of *table-responsive* class to create a responsive table, and the *table-striped* and *thead-inverse* classes for styling the table.
 
-###  **Bootstrap Cards**
+### **Bootstrap Cards**
 
 * Next we add a card to the second div in the first content row as follows, updating the div first by adding the classes col-12 col-sm-6 to it and then adding the card:
 
@@ -616,9 +616,9 @@ Note the use of *table-responsive* class to create a responsive table, and the *
 
 Note the use of the `<blockquote>` tag to create a block quote in the card. We can use a `<footer>` inside the block quote to specify the attribution of the quote to its origin.
 
-#  **Images and Media**
+# **Images and Media**
 
-###  **Adding the Restaurant Logo**
+### **Adding the Restaurant Logo**
 
 * We will now add the restaurant logo to the Jumbotron. In index.html go to the header row inside the jumbotron and replace the second `<div>` column with the following code:
 
@@ -635,7 +635,7 @@ Note the use of the `<blockquote>` tag to create a block quote in the card. We c
 ```
 * Repeat the above two steps for the *aboutus.html* and the *contactus.html* page also to update their navbars and jumbotrons.
 
-###  **Adding Media Objects**
+### **Adding Media Objects**
 
 * Next we will work with the content on the web page and use the media object classes to style the content in the content rows.
 
@@ -666,9 +666,9 @@ Note the use of the `<blockquote>` tag to create a block quote in the card. We c
     </div>
 </div>
 ```
-#  **Alerting Users**
+# **Alerting Users**
 
-###  **Adding Badges**
+### **Adding Badges**
 
 * We will continue to edit the *index.html* file. In this file, we will add a badge *HOT* next to the name of the dish Uthappizza in the first content row. To do this, add the following code inside the `<h2>` containing the name of the dish:
 
@@ -682,7 +682,7 @@ Note the use of the `<blockquote>` tag to create a block quote in the card. We c
 <span class="badge badge-pill badge-default">$4.99</span>
 ```
 
-#  **Tabs**
+# **Tabs**
 
 ### **Adding Tab Navigation Elements**
 
@@ -1337,7 +1337,7 @@ This will install the *node-sass* NPM module into your project and also add it a
 
 `npm run scss`
 
-# **NPM Scripts Part 1** #
+# **NPM Scripts Part 1** 
 
 ### **Watching for Changes and Parallelshell**
 
@@ -1361,6 +1361,94 @@ This will install the *node-sass* NPM module into your project and also add it a
 `npm start`
 
 * Now, whenever you make any changes to styles.scss file, it will automatically be compiled to the corresponding css file.
+
+### **Cleaning up a Distribution Folder** 
+
+* Install the *rimraf* npm module by typing the following at the prompt:
+
+`npm install --save-dev rimraf`
+
+* Then, set up the following script?
+
+`clean": "rimraf dist",`
+
+### **Copying Fonts**
+
+* Your project uses font-awesome fonts. These need to be copied to the distribution folder. To help us do this, install the *copyfiles* NPM module globally as follows:
+
+`npm -g install copyfiles`
+
+Remember to use *sudo* on mac and Linux.
+
+* Then set up the following script:
+
+`"copyfonts": "copyfiles -f node_modules/font-awesome/fonts/* dist/fonts",`
+
+###**Compressing and Minifying Images**
+
+* We use the *imagemin-cli* NPM module to help us to compress our images to reduce the size of the images being used in our project. Install the *imagemin-cli* module as follows:
+
+`npm -g install imagemin-cli`
+
+Remember to use *sudo* on mac and Linux. Some students have encountered issues with imagemin-cli not installing its plugins due to issues with global permissions on Mac. In that case try
+
+`sudo npm install -g imagemin-cli --unsafe-perm=true --allow-root`
+
+* Then set up the following script:
+
+` "imagemin": "imagemin img/* -o dist/img",`
+
+###**Preparing the Distribution Folder**
+
+* Open *.gitignore* and update it as follows. We do not want the dist folder to be checked into the git repository.
+
+```
+node_modules
+dist
+```
+
+* Then, install the *usemin-cli*, *cssmin*, *uglifyjs* and *htmlmin* NPM packages as follows:
+
+`npm install --save-dev usemin-cli cssmin uglifyjs htmlmin`
+
+* Add the following two scripts to the package.json file:
+
+```json
+"usemin": "usemin contactus.html -d dist --htmlmin -o dist/contactus.html && usemin aboutus.html -d dist --htmlmin -o dist/aboutus.html &&  usemin index.html -d dist --htmlmin -o dist/index.html",
+"build": "npm run clean && npm run imagemin && npm run copyfonts && npm run usemin"
+```
+
+* Open index.html and surround the css links inclusion code as follows:
+
+```html
+<!-- build:css css/main.css -->
+<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/bootstrap-social.css">
+<link href="css/styles.css" rel="stylesheet">
+<!-- endbuild -->
+```
+* Do the same change in *aboutus.html* and *contactus.html*
+* Similarly, open *index.html* and surround the js script inclusion code as follows:
+
+```html
+<!-- build:js js/main.js -->
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/tether/dist/js/tether.min.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="js/scripts.js"></script>
+<!-- endbuild --> 
+```
+* Do the same change in *aboutus.html* and *contactus.html*
+* To build the distribution folder, you can type the following at the prompt:
+`npm run build`
+
+* This will build the dist folder containing the files that are a self-contained version of your project. You can now copy the contents of this folder to a web server that hosts your website.
+
+
+
+
+
 
 
 
