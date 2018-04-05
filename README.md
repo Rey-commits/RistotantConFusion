@@ -1445,6 +1445,128 @@ dist
 
 * This will build the dist folder containing the files that are a self-contained version of your project. You can now copy the contents of this folder to a web server that hosts your website.
 
+# **Grunt**
+
+### **Installing Grunt**
+
+* At the command prompt, type the following to install Grunt command-line interface (CLI):
+
+`npm install -g grunt-cli`
+
+This will install the Grunt CLI globally so that you can use them in all projects.
+
+* Next install Grunt to use within your project. To do this, go to the *conFusion* folder and type the following at the prompt:
+
+`npm install grunt --save-dev`
+
+This will install local per-project Grunt to use within your project.
+
+### **Creating a Grunt File**
+
+* Next you need to create a Grunt file containing the configuration for all the tasks to be run when you use Grunt. To do this, create a file named *Gruntfile.js* in the *conFusion* folder.
+* Next, add the following code to Gruntfile.js to set up the file to configure Grunt tasks:
+
+```js
+'use strict';
+
+module.exports = function (grunt) {
+    // Define the configuration for all the tasks
+    grunt.initConfig({
+
+    });
+}; 
+```
+This sets up the Grunt module ready for including the grunt tasks inside the function above.
+
+### **Compiling SCSS to CSS**
+
+* Next, we are going to set up our first Grunt task. The SASS task converts the SCSS code to CSS. To do this, you need to include some Grunt modules that help us with the tasks. Install the following modules by typing the following at the prompt:
+
+```
+npm install grunt-sass --save-dev
+npm install time-grunt --save-dev
+npm install jit-grunt --save-dev
+```
+
+The first one installs the Grunt module for SCSS to CSS conversion. The time-grunt module generates time statistics about how much time each task consumes, and jit-grunt enables us to include the necessary downloaded Grunt modules when needed for the tasks.
+
+* Now, configure the SASS task in the Gruntfile as follows, by including the code inside the function in *Gruntfile.js*:
+
+```js
+'use strict';
+
+module.exports = function (grunt) {
+    // Time how long tasks take. Can help when optimizing build times
+    require('time-grunt')(grunt);
+
+    // Automatically load required Grunt tasks
+    require('jit-grunt')(grunt);
+
+    // Define the configuration for all the tasks
+    grunt.initConfig({
+        sass: {
+            dist: {
+                files: {
+                    'css/styles.css': 'css/styles.scss'
+                }
+            }
+        }
+    });
+
+    grunt.registerTask('css', ['sass']);
+};
+```
+* Now you can run the grunt SASS task by typing the following at the prompt:
+
+`grunt css`
+
+### **Watch and Serve Tasks**
+
+* The final step is to use the Grunt modules watch and browser-sync to spin up a web server and keep a watch on the files and automatically reload the browser when any of the watched files are updated. To do this, install the following grunt modules:
+
+```
+npm install grunt-contrib-watch --save-dev
+npm install grunt-browser-sync --save-dev
+```
+* After this, we will configure the browser-sync and watch tasks by adding the following code to the Grunt file:
+
+```js
+watch: {
+    files: 'css/*.scss',
+    tasks: ['sass']
+},
+browserSync: {
+    dev: {
+        bsFiles: {
+            src : [
+                'css/*.css',
+                '*.html',
+                'js/*.js'
+            ]
+        },
+        options: {
+            watchTask: true,
+            server: {
+                baseDir: "./"
+            }
+        }
+    }
+}
+```
+
+* Then add the following task to the Grunt file:
+
+`grunt.registerTask('default', ['browserSync', 'watch']);`
+
+* Now if you type the following at the command prompt, it will start the server, and open the web page in your default browser. It will also keep a watch on the files in the css folder, and if you update any of them, it will compile the scss file into css file and load the updated page into the browser (livereload)
+
+`grunt`
+
+
+
+
+
+
 
 
 
