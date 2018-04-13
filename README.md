@@ -1748,3 +1748,85 @@ grunt.registerTask('build', [
 * Now if you run Grunt, it will create a dist folder with the files structured correctly to be distributed to a server to host your website. To do this, type the following at the prompt:
 
 `grunt build`
+
+# **Gulp**
+
+### **Installing Gulp**
+
+* At the command prompt, type the following to install Gulp command-line interface (CLI) globally:
+
+`npm install -g gulp-cli`
+
+This will install the Gulp globally so that you can use it in all projects.
+
+* Next install Gulp to use within your project. To do this, go to the *conFusion* folder and type the following at the prompt:
+
+`npm install gulp --save-dev`
+
+This will install local per-project Gulp to use within your project.
+
+### **Install Gulp Plugins for SASS and Browser-Sync**
+
+* Install all the Gulp plugins that you will need for this exercise. To do this, type the following at the command prompt:
+
+`npm install gulp-sass  browser-sync --save-dev`
+
+### **Creating a Gulp File**
+
+* Next you need to create a Gulp file containing the tasks to be run when you use Gulp. To do this, create a file named *gulpfile.js* in the *conFusion* folder.
+
+### **Loading Gulp Plugins**
+
+* Load in all the Gulp plugins by including the following code in the Gulp file:
+
+```js
+'use strict';
+
+var gulp = require('gulp'),
+    sass = require('gulp-sass'),
+    browserSync = require('browser-sync');
+```
+
+### **Adding Gulp Tasks for SASS and Browser-Sync**
+
+* Next, we will add the code for the SASS task, the Browser-Sync task and the default task as follows:
+
+```js
+ 
+gulp.task('sass', function () {
+  return gulp.src('./css/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('./css'));
+});
+
+gulp.task('sass:watch', function () {
+  gulp.watch('./css/*.scss', ['sass']);
+});
+
+gulp.task('browser-sync', function () {
+   var files = [
+      './*.html',
+      './css/*.css',
+      './img/*.{png,jpg,gif}',
+      './js/*.js'
+   ];
+
+   browserSync.init(files, {
+      server: {
+         baseDir: "./"
+      }
+   });
+
+});
+
+// Default task
+gulp.task('default', ['browser-sync'], function() {
+    gulp.start('sass:watch');
+});
+```
+
+* Save the Gulp file
+
+### **Running the Gulp Tasks**
+
+`gulp`
