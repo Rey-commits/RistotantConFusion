@@ -1,5 +1,19 @@
 #  **Ristorant ConFusion**
 
+### Some Global Configuration for Git
+
+* To configure your user name to be used by Git, type the following at the prompt:
+
+`git config --global user.name "Your Name"`
+
+* To configure your email to be used by Git, type the following at the prompt:
+
+`git config --global user.email <your email address>`
+
+* You can check your default Git global configuration, you can type the following at the prompt:
+
+`git config --list`
+
 ## ** Basics of Node.js and NPM**
 
 ### Initializing package.json
