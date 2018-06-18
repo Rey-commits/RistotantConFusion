@@ -14,7 +14,7 @@
 
 `git config --list`
 
-## ** Basics of Node.js and NPM**
+## **Basics of Node.js and NPM**
 
 ### Initializing package.json
 

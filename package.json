@@ -57,6 +57,7 @@
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.6",
     "es6-promise": "^4.2.4",
-    "font-awesome": "^4.7.0"
+    "font-awesome": "^4.7.0",
+    "popper.js": "^1.14.3"
   }
 }
