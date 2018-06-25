@@ -324,15 +324,15 @@ In this task you will use some responsive utilities provided by Bootstrap to hid
 * We will now add a simple navigation bar to the web page so that it provides links to the other pages on the website. Start by adding the following code to the body just above the header jumbotron.
 
 ```html
-<nav class="navbar navbar-inverse navbar-toggleable-sm bg-primary fixed-top">
+<nav class="navbar navbar-dark navbar-expand-sm bg-primary fixed-top">
     <div class="container">
         <a class="navbar-brand" href="#">Ristorante Con Fusion</a>
-            <ul class="navbar-nav">
-                <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="./aboutus.html">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Menu</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-            </ul>            
+        <ul class="navbar-nav">
+            <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="./aboutus.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Menu</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
     </div>
 </nav>
 ```
@@ -373,7 +373,7 @@ body{
     z-index:0;
 }
 
-.navbar-inverse {
+.navbar-dark {
      background-color: #512DA8;
 }
 ```
@@ -399,13 +399,15 @@ body{
 
 `npm install font-awesome --save`
 
-* Download the bootstrap-social.css file given below to *conFusion/css* folder. This is a modified version of the bootstrap-social available on the http://lipis.github.io/bootstrap-social/. We added in support for G+ and YouTube buttons.
+* Another module that we install is Bootstrap Social that enables the addition of Social buttons to our site. You can find more information about it at https://lipis.github.io/bootstrap-social/. To install it using npm, type the following at the prompt:
 
-* We now need to include the CSS files for font awesome and bootstrap-social in the index.html file. Add the following code to the head of the file after the links for importing Bootstrap CSS classes:
+`npm i bootstrap-social --save`
+
+* We now need to include the CSS files for font awesome and bootstrap-social in the index.html file. Add the following code to the head of the file after the links for importing Bootstrap CSS classes. Do the same change to aboutus.html file:
 
 ```html
 <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="css/bootstrap-social.css">
+<link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
 ```
 
 * Let us now use some font icons in our web page and decorate it. Update the navbar's ul list items as follows in index.html:
